@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+    --bg-color: #ffff;
+    --text-color: #186351;
+    --main-color: #009D5B;
+    --box-color: #FFE350;
+    --second-bg-color: #F5EFFF;
+    --features-box: #E5F5EF;
+}
+
+body {
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    /* min-height: 100vh; */
+    padding: 5rem 9% 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.3%;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: 0px 1px 5px 0px rgba(22, 28, 51, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-navbar {
+    display: flex;
+    /* justify-content:space-between ; */
+    align-items: center;
+}
+
+.logo-navbar img {
+    width: 174.06px;
+    height: 37px;
+    cursor: default;
+    margin-left: -30px;
+    /* margin-right: 5px; */
+}
+
+.teks-logo {
+    font-size: 30px;
+    display: inline;
+    margin-bottom: 5rem;
+}
+
+.navbar {
+    margin-left: 520px;
+    /* justify-content: space-between; */
+}
+
+.navbar a {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 3rem;
+    transition: .3s ease-in-out;
+
+}
+
+.navbar a:hover {
+    color: var(--text-color);
+    opacity: 60%;
+    font-weight: 700;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 543px;
+    height: 668px;
+    margin-top: 3rem;
+}
+
+.beranda-content img {
+    width: 482px;
+    height: 420.54px;
+    margin-right: 12rem;
+
+}
+
+.beranda-content p {
+    color: var(--text-color);
+    font-family: 'DM Sans' sans-serif;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    margin-left: -22rem;
+}
+
+span {
+    color: #64AF46;
+}
+
+.btn-more {
+    width: 169px;
+    height: 56px;
+    display: center;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 47px;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Quicksand' sans-serif;
+    line-height: normal;
+    color: #fff;
+    transition: .5s ease;
+    /* margin-top: 25px; */
+    margin-left: -33rem;
+}
+
+.about-islam {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    margin-top: none;
+    background-color: #EFF9F5;
+}
+
+.about-content h1 {
+    width: 20rem;
+    font-family: 'Quicksand' sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.img-more img {
+    width: 487px;
+    height: 540.47px;
+}
+
+.about-islam {
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.about-info {
+    margin-left: 248px;
+}
+
+.about-info h1 {
+    margin-bottom: 10px;
+    font-size: 53px;
+}
+
+.about-info p {
+    width: 30rem;
+    color: var(--text-color);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.provide {
+    font-size: 48.06px;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    background-color: #ffff;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.features .features-box {
+    flex: 1 1 30rem;
+    background: var(--features-box);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+
+}
+
+.features .features-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.features-box .img1 {
+    width: 133px;
+    height: 152px;
+}
+
+.features-box .img2 {
+    width: 152.43px;
+    height: 152.43px;
+}
+
+.features-box .img3 {
+    width: 152.43px;
+    height: 152.43px;
+}
+
+.features-box h3 {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+    margin-top: 10rem;
+    background-color: #ffff;
+    border-top: 2px solid var(--main-color);
+    ;
+}
+
+.footer-text {
+    font-size: 20px;
+
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+    padding: .8rem;
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    margin-bottom: 10px;
+}
+
+.footer-iconTop a i {
+    font-size: 20px;
+    color: var(--second-bg-color);
+}
+
+.surah {
+    margin-top: 7%;
+    margin-bottom: 3%;
+    color: var(--text-color);
+    text-align: center;
+}
+
+#result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 50px;
+}
+
+.container {
+    background-color: var(--box-color);
+    width: 20rem;
+    margin: auto auto 30px auto;
+    border-radius: 20px;
+    transition: .3s ease;
+    padding: 15px;
+    border: 2px solid var(--main-color);
+    /* box-shadow: 0 0px 10px #483495; */
+}
+
+.container:hover {
+    border-bottom: 10px solid var(--main-color);
+}
+
+.hr {
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.nama-asma {
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nama-type {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.asmaul-husna {
+    margin-top: 7%;
+    margin-bottom: 3%;
+    color: var(--text-color);
+    text-align: center;
+}
+
+#result2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container2 {
+    background-color: var(--box-color);
+    width: 20rem;
+    margin: auto auto 30px auto;
+    border-radius: 20px;
+    transition: .3s ease;
+    padding: 15px;
+    border: 2px solid var(--main-color);
+    /* box-shadow: 0 0px 10px #483495; */
+}
+
+.container2:hover {
+    border-bottom: 10px solid var(--main-color);
+}
+
+.hr {
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.asmaul-husna {
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.latin {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.jadwal {
+    margin-top: 7%;
+    /* margin-bottom: 2px; */
+    color: var(--text-color);
+    text-align: center;
+}
+
+#list-jadwal {
+    background-color: #EFF9F5;
+    border-bottom-left-radius: 10px;
+}
+
+.card-header {
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /* margin-bottom: 10px; */
+    margin-top: 4rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* justify-content: center;
+    display: flex; */
+}
+
+.kota-prov {
+    margin-top: 7px;
+    margin-bottom: 2px;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.card-header p {
+    margin-top: 10px;
+}
+
+.card-header .judul {
+    font-size: 30px;
+}
+
+.table-primary th {
+    background-color: var(--box-color);
+    color: var(--text-color);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 8px;
+}
+
+.table-primary td {
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--box-color);
+}
+
+/* Responsive */
+
+/* Base Styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 80%;
+        /* flex-flow: column nowrap; */
+    }
+
+    .navbar {
+        margin-left: 320px;
+    }
+
+    .home {
+        width: 75rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .beranda-content {
+        margin-right: -7rem;
+    }
+
+    .beranda-content .home-text {
+        margin-right: 13rem;
+    }
+
+    .beranda-content p {
+        font-size: 29px;
+        margin-left: -25rem;
+    }
+
+    .btn-more {
+        margin-left: -40rem;
+    }
+
+    .about-islam .img-more img {
+        width: 426px;
+        height: 472.78px;
+    }
+
+    .about-info {
+        margin-left: 200px;
+    }
+
+    .about-info h1 {
+        font-size: 40px;
+    }
+
+    .about-info p {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 911px) {
+    .navbar {
+        margin-left: 160px;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+    }
+
+    .result2 {
+        width: 911px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container2 {
+        gap: 10px;
+        margin: 10px;
+        width: 18rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .navbar {
+        margin-left: 50px;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+        margin-left: 2rem;
+    }
+
+    .home-img {
+        flex-grow: 1;
+        flex-basis: 200;
+        width: 30rem;
+    }
+
+    .result2 {
+        width: 800px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container2 {
+        gap: 10px;
+        margin: 10px;
+        width: 14.6rem;
+    }
+    .kota-prov {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    /* .navbar {
+        margin-left: 50px;
+    }
+    .navbar a {
+        font-size: 1.2rem;
+        margin-left: 2rem;
+    }
+    .result2 {
+        width: 800px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .container2 {
+        gap: 10px;
+        margin: 10px;
+        width: 14.6rem;
+    }
+    .kota-prov {
+        font-size: 18px;
+    } */
+    .header .navbar {
+        flex-direction: column;
+    }
+
+    .home .beranda-content p {
+        font-size: 55px;
+        text-align: center;
+    }
+
+    .home .beranda-content img {
+        width: 636px;
+        height: 555.48px;
+        margin-left: -15px;
+    }
+
+    .btn-more {
+        font-size: 50px;
+        margin-left: -30p;
+    }
+
+    .home {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        flex-direction: column;
+    }
+
+    .home-img {
+        flex-grow: 1;
+        flex-basis: 200;
+        width: 80rem;
+    }
+
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+
+}

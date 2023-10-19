@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-navbar">
+            <div>
+                <img src="image/logoskl.png" alt="logo">
+            </div>
+            <div>
+                <nav class="navbar">
+                    <a href="index.html">Beranda</a>
+                    <a href="jadwal-shalat.html">Jadwal shalat</a>
+                    <a href="asmaul-husna.html"><strong>Asmaul Husna</strong></a>
+                    <a href="list-surah.html">List Surah</a>
+                </nav>
+            </div>
+    </header>
+
+
+    <h1 class="surah">Asmaul Husna</h1>
+    <div id="result2"></div>
+
+
+    <script>
+
+        //API asmaul husna
+        window.onload = function () {
+            getDataAsmaul();
+        }
+        function getDataAsmaul() {
+            fetch('https://api.aladhan.com/v1/asmaAlHusna')
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Gagal mengambil data');
+                    }
+                    return response.json();
+                })
+                .then(function (data) {
+                    displayDataAsmaul(data);
+                })
+                .catch(function (error) {
+                    console.log("terjadi kesalahan", error);
+                })
+        }
+
+        function displayDataAsmaul(data) {
+            var result2Div = document.getElementById('result2');
+            result2Div.innerHTML = "",
+
+                data.data.forEach(function (asmaul) {
+                    var AsmaulDiv = document.createElement('div');
+                    AsmaulDiv.classList.add('asmaul-husna');
+                    AsmaulDiv.className = 'container2';
+
+                    var namaAsmaul = document.createElement('h2');
+                    namaAsmaul.textContent = asmaul.name;
+                    namaAsmaul.className = "asmaul-husna";
+
+                    var hr = document.createElement('hr');
+                    hr.className = 'hr';
+
+                    var artiAsma = document.createElement('p');
+                    artiAsma.textContent = asmaul.transliteration;
+                    artiAsma.className = "latin";
+
+                    
+
+                    // var namaKeterangan = document.createElement('p');
+
+
+
+
+                    // namaKeterangan.textContent = surat.keterangan;
+
+                    AsmaulDiv.appendChild(namaAsmaul);
+                    AsmaulDiv.appendChild(hr);
+                    AsmaulDiv.appendChild(artiAsma);
+                    // suratDiv.appendChild(namaKeterangan);
+
+                    result2Div.appendChild(AsmaulDiv);
+
+
+                })
+        }
+    </script>
+</body>
+
+</html>

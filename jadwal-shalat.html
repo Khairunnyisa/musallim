@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-navbar">
+            <div>
+                <img src="image/logoskl.png" alt="logo">
+            </div>
+            <div>
+                <nav class="navbar">
+                    <a href="index.html">Beranda</a>
+                    <a href="jadwal-shalat.html"><strong>Jadwal Shalat</strong></a>
+                    <a href="asmaul-husna.html">Asmaul Husna</a>
+                    <a href="list-surah.html">List Surah</a>
+                </nav>
+            </div>
+    </header>
+
+    <section class="jadwal-shalat">
+        <div class="containerjadwal">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="judul">Jadwal Shalat</h5>
+                    <div class="kota-prov">
+                        <p class="kota">Kota/Lokasi: <strong id="city"></strong></p>
+                        <p class="prov">Provinsi/Daerah: <strong id="prov"></strong></p>
+                    </div>
+                    <!-- <div>
+                        <p>Provinsi/Daerah <strong id="prov"></strong></p>
+                    </div> -->
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Imsak</th>
+                                    <th>Subuh</th>
+                                    <th>Terbit</th>
+                                    <th>Dzuhur</th>
+                                    <th>Ashar</th>
+                                    <th>Maghrib</th>
+                                    <th>Isya</th>
+                                </tr>
+                                <thead>
+                                <tbody id="list-jadwal"></tbody>
+                            </thead>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const city = 1222;
+        const date = new Date();
+        const dd = String(date.getDate()).padStart(2, "0");
+        const mm = String(date.getMonth() + 1).padStart(2, "0");
+        const yyyy = date.getFullYear();
+        console.log(yyyy);
+        const now = yyyy + "-" + mm + "-" + dd;
+
+        const jadwalApi = `https://api.myquran.com/v1/sholat/jadwal/${city}/${yyyy}/${mm}`;
+
+        fetch(jadwalApi)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("ada yang salah")
+                } return response.json();
+            })
+            .then((data) => {
+                // console.log(data);
+                const jadwal = data.data;
+                // console.log(jadwal);
+                const list = jadwal.jadwal;
+                // console.log(list);
+                const listjadwal = document.getElementById("list-jadwal");
+                const kota = document.getElementById("city");
+                const provinsi = document.getElementById("prov");
+
+                kota.innerHTML = jadwal.lokasi;
+                provinsi.innerHTML = jadwal.daerah;
+
+                list.forEach((el) => {
+                    const tr = document.createElement("tr");
+                    if (el.date === now) {
+                        tr.classList.add("table-primary")
+                    }
+
+                    const dd = document.createElement("td");
+                    dd.innerHTML = el.tanggal;
+
+                    const imsak = document.createElement("td");
+                    imsak.innerText = el.imsak;
+
+                    const subuh = document.createElement("td");
+                    subuh.innerText = el.subuh;
+
+                    const terbit = document.createElement("td");
+                    terbit.innerText = el.terbit;
+
+                    const dzuhur = document.createElement("td");
+                    dzuhur.innerText = el.dzuhur;
+
+                    const ashar = document.createElement("td");
+                    ashar.innerText = el.ashar;
+
+                    const maghrib = document.createElement("td");
+                    maghrib.innerText = el.maghrib;
+
+                    const isya = document.createElement("td");
+                    isya.innerText = el.isya;
+
+                    listjadwal.appendChild(tr);
+                    tr.appendChild(dd);
+                    tr.appendChild(imsak);
+                    tr.appendChild(subuh);
+                    tr.appendChild(terbit);
+                    tr.appendChild(dzuhur);
+                    tr.appendChild(ashar);
+                    tr.appendChild(maghrib);
+                    tr.appendChild(isya);
+
+                })
+            })
+
+    </script>
+</body>
+
+</html>
